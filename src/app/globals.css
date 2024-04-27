@@ -14,14 +14,12 @@ html {
   scrollbar-color: hsla(0, 0%, 100%, 0.15) rgba(28, 28, 28, 0.15);
   overflow-x: hidden;
 }
+body {
+  background: #080808;
+}
 a {
   color: inherit;
   text-decoration: none;
-}
-
-.container {
-  margin: 0 auto;
-  height: 100%;
 }
 li {
   list-style: none;

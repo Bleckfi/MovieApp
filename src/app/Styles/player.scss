@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   object-fit: cover;
   border-radius: 20px;
@@ -39,7 +39,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1e1d1e;
   }
 }
 
@@ -62,7 +61,7 @@
     overflow: hidden;
     font-size: 20px;
     color: #ccc;
-    max-width: 85vw;
+    max-width: 40vw;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;

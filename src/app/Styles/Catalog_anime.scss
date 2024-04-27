@@ -4,9 +4,8 @@
   min-height: 172px;
   max-height: 172px;
   border-radius: 10px;
-  margin: 10px 10px 10px 0;
+  margin: 10px 15px 10px 0;
   background-size: cover;
-
   transition: 0.2s;
   cursor: pointer;
   overflow: hidden;
@@ -48,6 +47,7 @@
     justify-content: flex-end;
     transition: 0.2s;
     z-index: 3;
+    position: relative;
     &:hover {
       --hover: 1;
       background-color: rgba(0, 0, 0, 0.808);
@@ -84,7 +84,6 @@
       opacity: var(--hover);
       transition: 0.2s;
       margin-bottom: 0;
-      color: #d1d1d1;
       overflow: hidden;
       z-index: 2;
     }

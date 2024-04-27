@@ -8,13 +8,19 @@
 .status {
   color: #eee;
   font-size: 19px;
-  font-weight: 500;
+  font-weight: 700;
+  position: relative;
+  left: 70px;
 }
 
 .list {
+  --dissapear: 0;
   margin-left: -236px;
   display: flex;
   width: calc(100% + 236px);
+  &:hover {
+    --dissapear: 1;
+  }
 }
 .left_button_1 {
   left: 0;
@@ -26,7 +32,7 @@
   position: absolute;
   fill: #ababab;
   transition: 0.3s;
-  opacity: 1;
+  opacity: var(--dissapear);
   cursor: pointer;
   z-index: 20;
   padding: 0 20px;
@@ -39,7 +45,7 @@
   position: absolute;
   fill: #ababab;
   transition: 0.3s;
-  opacity: 1;
+  opacity: var(--dissapear);
   z-index: 20;
   height: 100%;
   display: flex;
