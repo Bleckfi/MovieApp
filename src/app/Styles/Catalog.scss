@@ -1,0 +1,57 @@
+.catalog__container {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 15px 0 30px;
+  margin-top: 25px;
+}
+.status {
+  color: #eee;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.list {
+  margin-left: -236px;
+  display: flex;
+  width: calc(100% + 236px);
+}
+.left_button_1 {
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transform: rotate(180deg);
+  position: absolute;
+  fill: #ababab;
+  transition: 0.3s;
+  opacity: 1;
+  cursor: pointer;
+  z-index: 20;
+  padding: 0 20px;
+  background: linear-gradient(90deg, rgba(8, 8, 8, 0), #080808);
+  pointer-events: none;
+}
+.right_button_1 {
+  cursor: pointer;
+  right: 0;
+  position: absolute;
+  fill: #ababab;
+  transition: 0.3s;
+  opacity: 1;
+  z-index: 20;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: none;
+  padding: 0 20px;
+  background: linear-gradient(90deg, rgba(8, 8, 8, 0), #080808);
+}
+
+.episode_space {
+  height: 172px;
+  min-width: 306px;
+  min-height: 172px;
+}

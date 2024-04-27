@@ -1,0 +1,110 @@
+.container_catalog {
+  min-width: 306px;
+  max-width: 306px;
+  min-height: 172px;
+  max-height: 172px;
+  border-radius: 10px;
+  margin: 10px 10px 10px 0;
+  background-size: cover;
+
+  transition: 0.2s;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  &:hover {
+    scale: 1.085;
+    box-shadow: 0 0 10px 0 #000;
+  }
+
+  .catalog_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      inset: 0px;
+      object-fit: cover;
+      object-position: center top;
+      color: transparent;
+    }
+    .shadow_el {
+      position: absolute;
+      z-index: 2;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .hovered {
+    --hover: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    transition: 0.2s;
+    z-index: 3;
+    &:hover {
+      --hover: 1;
+      background-color: rgba(0, 0, 0, 0.808);
+    }
+    .catalog_item_tag_container {
+      position: absolute;
+      display: flex;
+      left: 10px;
+      top: 10px;
+      transition: 0.2s;
+      opacity: calc((var(--hover) - 1) * -1);
+      .back {
+        background-color: #2caa05;
+      }
+      .catalog_item_tag {
+        padding: 2px 8px;
+        border-radius: 3px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-right: 4px;
+      }
+    }
+    .catalog_item_description {
+      display: flex;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      max-width: 100%;
+      max-height: 100%;
+      width: 100%;
+      height: 100%;
+      padding: 20px 20px 0;
+      font-size: 12px;
+      opacity: var(--hover);
+      transition: 0.2s;
+      margin-bottom: 0;
+      color: #d1d1d1;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .catalog_item_container_metadata {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 0 10px 5px;
+      align-items: center;
+      z-index: 2;
+      .catalog_item_name {
+        user-select: none;
+        font-size: 15px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-weight: 400;
+        transition: 0.2s;
+        opacity: calc((var(--hover) - 1) * -1);
+      }
+    }
+  }
+}
