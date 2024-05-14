@@ -3,21 +3,21 @@ function Animeid() {
   return (
     <>
       <div className="anime_body">
-        <div class="anime_left_body">
+        <div className="anime_left_body">
           <a href="/play/11757">
-            <div class="anime_body_poster">
+            <div className="anime_body_poster">
               <img
                 alt=""
                 sizes="100vw"
                 src="https://anitype.fun/_next/image?url=https%3A%2F%2Fdesu.shikimori.one%2Fuploads%2Fposter%2Fanimes%2F11757%2F8958e24041338f53bdab4955ed395d66.jpeg&w=1920&q=75"
               />
-              <div class="anime_body_poster_sub">
-                <div class="anime_body_poster_sub_watch">Смотреть</div>
+              <div className="anime_body_poster_sub">
+                <div className="anime_body_poster_sub_watch">Смотреть</div>
               </div>
             </div>
           </a>
-          <div class="anime_add_to_folders">
-            <button class="anime_add_to_folder">
+          <div className="anime_add_to_folders">
+            <button className="anime_add_to_folder">
               <svg
                 fill="#eaeaea"
                 width="20"
@@ -29,15 +29,19 @@ function Animeid() {
               </svg>
               <span>Добавить в папку</span>
             </button>
-            <div class="list_name_folder hidden">
-              <div class="list_name_folder_item add_user_folder">
+            <div className="list_name_folder hidden">
+              <div className="list_name_folder_item add_user_folder">
                 Создать папку
               </div>
             </div>
           </div>
         </div>
-        <div className="anime_body_center">2</div>
-        <div className="anime_body_right">3</div>
+        <div className="anime_body_center">lo</div>
+        <div className="anime_right_body">
+          <div className="search_rank anime" style={{ color: "green" }}>
+            8.32
+          </div>
+        </div>
       </div>
     </>
   );

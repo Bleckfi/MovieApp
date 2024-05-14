@@ -22,6 +22,9 @@
       color: transparent;
     }
   }
+  .anime_body_poster:hover {
+    transform: perspective(612px) rotateX(7deg) rotateY(7deg) rotate(0deg);
+  }
 }
 .anime_body_poster_sub {
   opacity: 0;
@@ -33,4 +36,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.anime_add_to_folder {
+  width: 100%;
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-top: 25px;
+  border: none;
+  outline: none;
+  background: #282828;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 32;
 }

@@ -1,13 +1,11 @@
+import axios from "axios";
 import "../Styles/Catalog_anime.scss";
 
-function Anime() {
+function Anime({ anime }) {
   return (
     <div className="container_catalog border-none">
       <div className="catalog_image">
-        <img
-          src="https://desu.shikimori.one/uploads/poster/animes/52299/9a1ee4e32c72ab99b76e84bbe49f7e87.jpeg"
-          alt=""
-        />
+        <img src={anime.img} alt="" />
         <div className="shadow_el"></div>
       </div>
       <div className="hovered">
@@ -21,11 +19,20 @@ function Anime() {
           подземелья, то врата пропадут, не открывшись, и мирн...
         </div>
         <div className="catalog_item_container_metadata">
-          <div className="catalog_item_name">Поднятие уровня в одиночку</div>
+          <div className="catalog_item_name">{anime.title}</div>
         </div>
       </div>
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  const res = await axios.get("http://localhost:3000/api/welcome");
+  return {
+    props: {
+      anime: res.data,
+    },
+  };
+};
 
 export default Anime;

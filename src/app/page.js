@@ -9,6 +9,7 @@ export default function Home() {
     "С высокой оценкой",
     "Фильмы",
   ];
+
   return (
     <>
       <VideoWelcome />
