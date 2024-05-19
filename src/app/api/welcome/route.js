@@ -3,10 +3,8 @@ import Title from "../../Server/scheme/anime";
 import { NextResponse } from "next/server";
 await dbConnect();
 export async function GET() {
-  try {
-    const anime = await Title.find();
-    return NextResponse.json(anime);
-  } catch {}
+  const anime = await Title.find();
+  return NextResponse.json(anime);
 }
 
 export async function POST(req) {

@@ -1,16 +1,21 @@
+"use client";
+
 import "../../Styles/Animeid.scss";
-function Animeid() {
+import { useFetchAnimeData } from "../../Components/animeFetch";
+
+function Animeid({ params }) {
+  const id = params.animeid;
+  const { data } = useFetchAnimeData(id);
+
+  if (!data) return <div>Нет данных</div>;
+
   return (
     <>
       <div className="anime_body">
         <div className="anime_left_body">
-          <a href="/play/11757">
+          <a href={`/play/${data[0]._id}`}>
             <div className="anime_body_poster">
-              <img
-                alt=""
-                sizes="100vw"
-                src="https://anitype.fun/_next/image?url=https%3A%2F%2Fdesu.shikimori.one%2Fuploads%2Fposter%2Fanimes%2F11757%2F8958e24041338f53bdab4955ed395d66.jpeg&w=1920&q=75"
-              />
+              <img sizes="100vw" src={data[0].img} />
               <div className="anime_body_poster_sub">
                 <div className="anime_body_poster_sub_watch">Смотреть</div>
               </div>
@@ -39,7 +44,7 @@ function Animeid() {
         <div className="anime_body_center">lo</div>
         <div className="anime_right_body">
           <div className="search_rank anime" style={{ color: "green" }}>
-            8.32
+            {data[0].rate}
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
+"use client";
+
 import "../Styles/Catalog.scss";
 import Anime from "./Catalog_anime";
-function Catalog({ status = "", data }) {
-  console.log(data.anime[0].img);
+function Catalog({ data, status }) {
   return (
     <>
       <div className="catalog__container">
@@ -29,8 +30,8 @@ function Catalog({ status = "", data }) {
               </svg>
             </div>
             <div className="episode_space"></div>
-            {data.anime.map((el, index) => (
-              <Anime key={index} data={el} />
+            {data.anime.map((el) => (
+              <Anime key={el._id} data={el} />
             ))}
           </div>
         </div>
