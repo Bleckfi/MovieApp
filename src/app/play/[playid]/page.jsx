@@ -144,7 +144,7 @@ function Play({ params }) {
             </div>
             <div className="tab_content_p_line">
               <div>Эпизод:</div>
-              <div className="no_wrap_div_text">1 </div>
+              <div className="no_wrap_div_text">{anime.episodeNum} </div>
             </div>
             <div className="tab_content_p_line_ff">
               <div className="tab_content_p_line_fa" onClick={nextEpisode}>
