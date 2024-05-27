@@ -6,7 +6,7 @@ function Anime({ data }) {
     <div className="container_catalog border-none">
       <Link href={`/anime/${data._id}`}>
         <div className="catalog_image">
-          <img src={data.img} alt="" />
+          <img src={data.poster} alt="" />
           <div className="shadow_el"></div>
         </div>
         <div className="hovered">
