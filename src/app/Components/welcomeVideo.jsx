@@ -1,3 +1,5 @@
+"use client";
+
 import { createRef, useState, useEffect } from "react";
 import { Player, ControlBar } from "video-react";
 import "../Styles/player.scss";
