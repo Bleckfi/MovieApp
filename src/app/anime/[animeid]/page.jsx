@@ -1,6 +1,6 @@
 "use client";
-import "./Styles/Animeid.scss";
-import useFetchAnimeData from "./Components/animeFetch";
+import "../../Styles/AnimeID.scss";
+import useFetchAnimeData from "../../Components/animeFetch";
 
 function Animeid({ params }) {
   const id = params.animeid;
