@@ -3,52 +3,61 @@ import { type } from "os";
 
 const titleSchema = new mongoose.Schema(
   {
-    title: {
-      type: String,
-      required: true,
-    },
-    japTitle: {
-      type: String,
-      required: true,
-    },
-    img: {
-      type: String,
-      required: true,
-    },
-    status: {
-      type: String,
-      required: true,
-    },
-    rate: {
-      type: Number,
-      required: true,
-    },
-    desc: {
-      type: String,
-      required: true,
-    },
-    poster: {
-      type: String,
-      required: true,
-    },
-    genre: {
-      type: String,
-      required: true,
-    },
     type: {
       type: String,
       required: true,
     },
-    episodes: {
-      episode: [
-        {
-          season: { type: Number, required: true },
-          episodeNum: { type: Number, required: true },
-          src: { type: String, required: true },
-          translationName: { type: String, required: true },
-        },
-      ],
+    id: {
+      type: String,
+      required: true,
     },
+    title: {
+      type: String,
+      required: true,
+    },
+    title_orig: {
+      type: String,
+      required: true,
+    },
+    year: {
+      type: Number,
+      required: true,
+    },
+
+    worldart_link: {
+      type: String,
+      required: true,
+    },
+    link: {
+      type: String,
+      required: true,
+    },
+    material_data: [
+      {
+        shikimori_rating: {
+          type: Number,
+          required: true,
+        },
+        anime_genres: [],
+        screenshots: [],
+        poster_url: {
+          type: String,
+          required: true,
+        },
+        description: {
+          type: String,
+          required: true,
+        },
+        anime_description: {
+          type: String,
+          required: true,
+        },
+        anime_status: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
