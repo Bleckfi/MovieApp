@@ -1,25 +1,13 @@
 "use client";
 import "../../Styles/Play.scss";
 import useFetchAnimeData from "../../Components/animeFetch";
-import { useState } from "react";
 
 function Play({ params }) {
-  const [num, setNum] = useState(0);
   const id = params.playid;
   const dataTemp = useFetchAnimeData(id);
   const data = dataTemp.data;
   if (!data) return <div></div>;
-  const anime = data[0].episodes.episode[num];
-  console.log(anime);
-  if (!anime) return <div></div>;
 
-  function nextEpisode() {
-    if (num + 1 < data[num].episodes.episode.length) {
-      setNum(num + 1);
-    } else {
-      console.log("Нет следующего эпизода");
-    }
-  }
   return (
     <>
       <div className="player_page">
@@ -27,7 +15,7 @@ function Play({ params }) {
           <div className="player_page_player player_page_panel">
             <iframe
               title="player"
-              src={anime.src}
+              src={data[0].player_link}
               className="player_page_player_iframe"
               allowFullScreen=""
               allow="autoplay *; fullscreen *"
@@ -37,9 +25,7 @@ function Play({ params }) {
           <div className="player_page_info">
             <p className="player_page_info_title">{data[0].title}</p>
             <div className="player_page_info_under_title_block">
-              <div className="player_page_info_under_title_block_info">
-                <p>{anime.episodeNum} эпизод, Studio Band</p>
-              </div>
+              <div className="player_page_info_under_title_block_info"></div>
               <div className="flex">
                 <div className="like_block">
                   <div className="like_block_el like_block_el_left">
@@ -138,19 +124,7 @@ function Play({ params }) {
               <div>Плеер:</div>
               <div>Kodik</div>
             </div>
-            <div className="tab_content_p_line">
-              <div>Озвучка:</div>
-              <div>Studio Band</div>
-            </div>
-            <div className="tab_content_p_line">
-              <div>Эпизод:</div>
-              <div className="no_wrap_div_text">{anime.episodeNum} </div>
-            </div>
-            <div className="tab_content_p_line_ff">
-              <div className="tab_content_p_line_fa" onClick={nextEpisode}>
-                Следующий эпизод
-              </div>
-            </div>
+            <div className="tab_content_p_line_ff"></div>
           </div>
           <div className="second_menu hidden">
             <div className="second_menu_header">

@@ -4,15 +4,22 @@ import useFetchAnimeData from "../../Components/animeFetch";
 
 function Animeid({ params }) {
   const id = params.animeid;
-  const { data } = useFetchAnimeData(id);
-  if (!data) return <div>Нет данных</div>;
-
+  const { data, isLoading } = useFetchAnimeData(id);
+  if (isLoading) return <p>Loading...</p>;
+  if (!data || !data[0]) {
+    return <p>No data found</p>;
+  }
+  const anime = data[0].material_data[0];
+  const desc =
+    anime.anime_description ||
+    anime.description ||
+    "Описание скоро появится :(";
   return (
     <>
       <div
         className="body_image"
         style={{
-          backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.76) 100%), linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(8, 8, 8) 65%), url(${data[0].poster})`,
+          backgroundImage: `radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.76) 100%), linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(8, 8, 8) 65%), url(${anime.poster_url})`,
           width: "100%",
           position: "absolute",
           height: "100vh",
@@ -27,7 +34,7 @@ function Animeid({ params }) {
         <div className="anime_left_body">
           <a href={`/play/${data[0]._id}`}>
             <div className="anime_body_poster">
-              <img sizes="100vw" src={data[0].poster} />
+              <img sizes="100vw" src={anime.poster_url} />
               <div className="anime_body_poster_sub">
                 <div className="anime_body_poster_sub_watch">Смотреть</div>
               </div>
@@ -46,30 +53,19 @@ function Animeid({ params }) {
         </div>
         <div className="anime_body_center">
           <div className="title_name">
-            {data[0].title} / {data[0].japTitle}
+            {data[0].title} / {data[0].title_orig}
           </div>
           <div class="anime_central_body_genres_text">
-            {data[0].status}
-            <span class="text_devider">|</span>Сериал
-            <span class="text_devider">|</span>12 эпизодов
-            <span class="text_devider">|</span>2024 год
-            <span class="text_devider"> | </span>18+
-            <span class="text_devider">|</span>Экшен, Приключения, Фэнтези
+            {anime.anime_status} |
+            {anime?.anime_genres.map((el) => (
+              <span> {el} |</span>
+            ))}
           </div>
           <span className="desc_title">Описание</span>
-          <div className="desc">{data[0].desc}</div>
+          <div className="desc">{desc}</div>
         </div>
         <div className="anime_right_body">
-          <div
-            className="search_rank anime"
-            style={{
-              color: "rgb(92, 220, 52)",
-              fontSize: "26px",
-              fontWeight: "700",
-            }}
-          >
-            {data[0].rate}
-          </div>
+          <div className="rank">{anime.shikimori_rating}</div>
         </div>
       </div>
     </>

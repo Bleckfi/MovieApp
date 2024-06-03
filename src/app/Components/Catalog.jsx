@@ -30,7 +30,7 @@ function Catalog({ data, status }) {
               </svg>
             </div>
             <div className="episode_space"></div>
-            {data.anime.map((el) => (
+            {data?.anime.map((el) => (
               <Anime key={el._id} data={el} />
             ))}
           </div>
