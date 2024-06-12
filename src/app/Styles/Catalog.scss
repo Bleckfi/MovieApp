@@ -1,10 +1,10 @@
 .catalog__container {
   width: 100%;
-  height: -moz-fit-content;
   height: fit-content;
   padding: 15px 0 30px;
   margin-top: 25px;
 }
+
 .status {
   color: #eee;
   font-size: 19px;
@@ -13,36 +13,26 @@
   left: 70px;
 }
 
+.relative {
+  position: relative;
+}
+
 .list {
   --dissapear: 0;
-  margin-left: -236px;
   display: flex;
-  width: calc(100% + 236px);
+  overflow-x: hidden;
+  transition: all 0.3s ease;
   &:hover {
     --dissapear: 1;
   }
 }
-.left_button_1 {
-  left: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  transform: rotate(180deg);
-  position: absolute;
-  fill: #ababab;
-  transition: 0.3s;
-  opacity: var(--dissapear);
-  cursor: pointer;
-  z-index: 20;
-  padding: 0 20px;
-  background: linear-gradient(90deg, rgba(8, 8, 8, 0), #080808);
-  pointer-events: none;
-}
+
+.left_button_1,
 .right_button_1 {
   cursor: pointer;
-  right: 0;
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   fill: #ababab;
   transition: 0.3s;
   opacity: var(--dissapear);
@@ -50,14 +40,28 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  pointer-events: none;
+  pointer-events: auto;
   padding: 0 20px;
+}
+
+.left_button_1 {
+  left: 0;
+  justify-content: flex-end;
   background: linear-gradient(90deg, rgba(8, 8, 8, 0), #080808);
+}
+
+.right_button_1 {
+  right: 0;
+  justify-content: flex-start;
+  background: linear-gradient(270deg, rgba(8, 8, 8, 0), #080808);
 }
 
 .episode_space {
   height: 172px;
-  min-width: 306px;
+  min-width: 60px;
   min-height: 172px;
+}
+
+.left_button_1 svg {
+  transform: rotate(180deg);
 }

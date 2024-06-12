@@ -2,7 +2,8 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-
+import Provider from "./Components/Providers";
+require("dotenv").config();
 const roboto = Roboto({
   subsets: ["latin"],
   weight: "300",
@@ -18,9 +19,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={roboto.className}>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <Provider>
+          <Header />
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

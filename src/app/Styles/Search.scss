@@ -1,0 +1,90 @@
+.header_search_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  transition: 0.3s;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.search_anime_input {
+  outline: none;
+  background: #09090b;
+  padding: 15px 20px;
+  border-radius: 8px 0 0 0;
+  width: 100%;
+  border: 1px solid #212121;
+  transition: 0.3s;
+}
+.search_anime_result_container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  background: #09090b;
+  border-radius: 0 0 0 8px;
+  border-left: 1px solid #212121;
+  border-right: 1px solid #212121;
+  border-bottom: 1px solid #212121;
+  min-height: 200px;
+  height: 70vh;
+  overflow: scroll;
+}
+.search_anime_result_left {
+  min-width: 100%;
+  overflow-y: scroll;
+}
+.search_element {
+  display: flex;
+  height: 68px;
+  width: 100%;
+  padding: 10px 20px;
+  transition: 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.search_poster {
+  width: 32px;
+  height: 48px;
+  background-size: cover;
+  object-fit: cover;
+  overflow: hidden;
+}
+.search_body {
+  display: flex;
+  width: 100%;
+  margin-left: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.search_info {
+  display: flex;
+  flex-direction: column;
+}
+.search_title {
+  font-size: 15px;
+  font-weight: 400;
+}
+.search_rank {
+  display: flex;
+  color: #41d009;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  margin-right: 5px;
+}
+.search_date {
+  font-size: 13px;
+  font-weight: lighter;
+}

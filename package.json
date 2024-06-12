@@ -3,16 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "set NODE_ENV=dev && next dev",
+    "build": "set NODE_ENV=production && next build",
+    "start": "set NODE_ENV=localhost && next start",
     "lint": "next lint"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
     "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
     "mongoose": "^8.3.3",
     "next": "14.1.4",
+    "next-auth": "^4.24.7",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
