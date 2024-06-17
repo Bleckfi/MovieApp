@@ -31,10 +31,6 @@ function VideoWelcome() {
     },
   ];
 
-  const rand = () => {
-    return Math.floor(Math.random() * anim.length);
-  };
-
   const [isMuted, setIsMuted] = useState(true);
   const [animeRand, setAnimeRand] = useState("");
   const player = createRef();
@@ -45,8 +41,11 @@ function VideoWelcome() {
   };
 
   useEffect(() => {
+    const rand = () => {
+      return Math.floor(Math.random() * anim.length);
+    };
     setAnimeRand(rand());
-  }, []);
+  }, [anim.length]);
 
   return (
     <>

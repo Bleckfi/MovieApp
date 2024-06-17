@@ -4,7 +4,7 @@ import "../Styles/Header.scss";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import Search from "./Search";
-
+import Image from "next/image";
 function Header() {
   const [hide, setHide] = useState(false);
   let session = useSession();
@@ -17,8 +17,9 @@ function Header() {
               <div className="user_avatar_img">
                 <Link href="/profile">
                   {session?.data && (
-                    <img
+                    <Image
                       width={60}
+                      height={60}
                       className="rounded-[50%]"
                       src={session.data?.user?.image}
                       alt=""

@@ -1,7 +1,7 @@
 "use client";
 import "../../Styles/AnimeID.scss";
 import useFetchAnimeData from "../../Components/animeFetch";
-
+import Image from "next/image";
 function Animeid({ params }) {
   const id = params.animeid;
   const { data, isLoading } = useFetchAnimeData(id);
@@ -34,7 +34,7 @@ function Animeid({ params }) {
         <div className="anime_left_body">
           <a href={`/play/${data[0]._id}`}>
             <div className="anime_body_poster">
-              <img sizes="100vw" src={anime.poster_url} />
+              <Image width={302} height={463} src={anime.poster_url} />
               <div className="anime_body_poster_sub">
                 <div className="anime_body_poster_sub_watch">Смотреть</div>
               </div>

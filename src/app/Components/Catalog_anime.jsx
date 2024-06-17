@@ -10,8 +10,8 @@ function Anime({ data }) {
       <Link href={`/anime/${data._id}`}>
         <div className="catalog_image">
           <Image
-            width={100}
-            height={100}
+            width={306}
+            height={172}
             src={data.material_data?.poster_url}
             alt=""
           />

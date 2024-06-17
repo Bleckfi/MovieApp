@@ -15,6 +15,18 @@ const nextConfig = {
         port: "",
         pathname: "/images/film_big/**",
       },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        port: "",
+        pathname: "/wikipedia/commons/thumb/**",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "/a/**",
+      },
     ],
   },
 };

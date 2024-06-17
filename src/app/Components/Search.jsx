@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "../Styles/Search.scss";
-
+import Image from "next/image";
 function Search({ hide, setHide }) {
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -62,7 +62,9 @@ function Search({ hide, setHide }) {
                 <a key={result._id} href={`/anime/${result._id}`}>
                   <div className="search_element">
                     <div className="search_poster">
-                      <img
+                      <Image
+                        width={32}
+                        height={48}
                         src={result.material_data?.poster_url}
                         alt={`${result.title} Poster`}
                       />
