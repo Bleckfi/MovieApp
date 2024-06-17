@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "set NODE_ENV=dev && next dev",
-    "build": "set NODE_ENV=production && next build",
-    "start": "set NODE_ENV=localhost && next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {

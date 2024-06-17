@@ -34,7 +34,7 @@ function Animeid({ params }) {
         <div className="anime_left_body">
           <a href={`/play/${data[0]._id}`}>
             <div className="anime_body_poster">
-              <Image width={302} height={463} src={anime.poster_url} />
+              <Image width={302} height={463} src={anime.poster_url} alt="" />
               <div className="anime_body_poster_sub">
                 <div className="anime_body_poster_sub_watch">Смотреть</div>
               </div>
@@ -58,7 +58,7 @@ function Animeid({ params }) {
           <div class="anime_central_body_genres_text">
             {anime.anime_status} |
             {anime?.anime_genres.map((el) => (
-              <span> {el} |</span>
+              <span key={el._id}> {el} |</span>
             ))}
           </div>
           <span className="desc_title">Описание</span>
