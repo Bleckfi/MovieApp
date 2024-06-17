@@ -1,6 +1,7 @@
 "use client";
 import "../Styles/Catalog_anime.scss";
 import Link from "next/link";
+import Image from "next/image";
 function Anime({ data }) {
   const desc = data.material_data?.description || "Нет описания";
   const rate = data.material_data?.shikimori_rating || "Нет оценки";
@@ -8,7 +9,12 @@ function Anime({ data }) {
     <div className="container_catalog border-none">
       <Link href={`/anime/${data._id}`}>
         <div className="catalog_image">
-          <img src={data.material_data?.poster_url} alt="" />
+          <Image
+            width={100}
+            height={100}
+            src={data.material_data?.poster_url}
+            alt=""
+          />
           <div className="shadow_el"></div>
         </div>
         <div className="hovered">

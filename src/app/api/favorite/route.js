@@ -1,16 +1,20 @@
 import dbConnect from "../../Server/mongo";
 import User from "../../Server/scheme/users";
-import { NextResponse } from "next/server";
 
-export async function PUT(request) {
-  const { email, animeId } = await request.json();
+export default async function POST(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Method Not Allowed" });
+  }
+
+  const { email, animeId } = req.body;
 
   await dbConnect();
 
   try {
     const user = await User.findOne({ email });
+
     if (!user) {
-      return NextResponse.json({ message: "User not found" }, { status: 404 });
+      return res.status(404).json({ message: "User not found" });
     }
 
     if (!user.favorite.includes(animeId)) {
@@ -18,11 +22,9 @@ export async function PUT(request) {
       await user.save();
     }
 
-    return NextResponse.json({ message: "Anime added to favorites", user });
+    return res.status(200).json({ message: "Anime added to favorites", user });
   } catch (error) {
-    return NextResponse.json(
-      { message: "Error adding anime to favorites" },
-      { status: 500 }
-    );
+    console.error("Error adding anime to favorites:", error);
+    return res.status(500).json({ message: "Error adding anime to favorites" });
   }
 }
