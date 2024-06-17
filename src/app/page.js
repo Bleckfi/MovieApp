@@ -18,7 +18,7 @@ export default async function Home() {
   );
 }
 
-export const getStatus = async (api, status, anime_status) => {
+const getStatus = async (api, status, anime_status) => {
   try {
     const res = await axios.get(
       `http://localhost:3000/api/${api}?material_data.${anime_status}=${status}`
