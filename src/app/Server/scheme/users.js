@@ -5,15 +5,14 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-    },
-    password: {
-      type: String,
-      required: true,
+      unique: true,
     },
     favorite: {
-      type: String,
-      required: true,
+      type: [mongoose.Schema.Types.ObjectId],
+      default: [],
     },
+    name: { type: String, required: true },
+    image: { type: String },
   },
   { timestamps: true }
 );

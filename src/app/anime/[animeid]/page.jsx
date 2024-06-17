@@ -42,7 +42,7 @@ function Animeid({ params }) {
           </a>
           <div className="anime_add_to_folders">
             <button className="anime_add_to_folder">
-              <span>Добавить в избранное</span>
+              <span onClick={() => {}}>Добавить в избранное</span>
             </button>
             <div className="list_name_folder hidden">
               <div className="list_name_folder_item add_user_folder">
